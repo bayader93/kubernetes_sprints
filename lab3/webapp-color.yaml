@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp-color
+  labels:
+    app: myapp
+    tier: backend
+spec:
+  containers:
+  - name: nginx
+    image: nginx:alpine
+
+  envFrom:
+  - configMapRef:
+      name: webapp-config-map
